@@ -1,0 +1,52 @@
+/*
+   这是一个多行注释
+   它可以跨越多行
+   ID 选择器	具有特定 ID 的元素。单一 HTML 页面中，每个 ID 只对应一个元素，一个元素只对应一个 ID	#my-id
+   选择 <p id="my-id"> 或 <a id="my-id">
+
+   类选择器	具有特定类的元素。单一页面中，一个类可以有多个实例	.my-class
+        选择 <p class="my-class"> 和 <a class="my-class">
+
+   属性选择器	拥有特定属性的元素	img[src]
+    选择 <img src="myimage.png"> 但不是 <img>
+
+    伪类选择器	特定状态下的特定元素（比如鼠标指针悬停于链接之上）	a:hover
+        选择仅在鼠标指针悬停在链接上时的 <a> 元素
+*/
+
+/*P,h1 {*/
+/*    color: red;*/
+/*    width: 500px;*/
+/*    border: 1px solid black;*/
+/*}*/
+html {
+    font-size: 10px; /* px 表示“像素（pixel）”: 基础字号为 10 像素 */
+    font-family: "Open Sans", sans-serif; /* 这应该是你从 Google Fonts 得到的其余输出。 */
+    background-color: #00539f;
+}
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ff9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+}
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #00539f;
+    text-shadow: 3px 3px 1px black;
+}
+
+p,
+li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
