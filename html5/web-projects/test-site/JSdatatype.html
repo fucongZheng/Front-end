@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript基本数据类型</title>
+    <style>
+        h3 {
+            text-align: center
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+        }
+
+        table,
+        tr,
+        th {
+            border: 1px solid black;
+            padding: 5px 30px;
+
+        }
+    </style>
+</head>
+<body>
+<h3>订单详情列表</h3>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>商品名称</th>-->
+<!--            <th>商品价格</th>-->
+<!--            <th>商品数量</th>-->
+<!--            <th>总价</th>-->
+<!--            <th>收获地址</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>小米滑板车</th>-->
+<!--            <th>1999</th>-->
+<!--            <th>2</th>-->
+<!--            <th>3998</th>-->
+<!--            <th>南宁良庆区</th>-->
+<!--        </tr>-->
+<!--    </table>-->
+<script>
+    /*
+    字符串（String）：表示文本数据，用引号（单引号或双引号）括起来，如 "Hello" 或 'World'。
+    数字（Number）：表示数值数据，可以是整数或浮点数，如 42 或 3.14。
+    布尔值（Boolean）：表示逻辑值，只有两个可能的取值：true（真）或 false（假）。
+    空值（Null）：表示一个无值的特殊类型，只有一个取值：null。
+    未定义（Undefined）：表示一个未初始化的变量或缺少值的情况，只有一个取值：undefined。
+    符号（Symbol）：在ES6中引入，表示唯一且不可变的值。
+     */
+    //模板变量 ~健包围 ${}
+    let message = "Hello, World!";
+    console.log(`this is my ${message}`)
+    console.log(message); // 输出：Hello, World!
+
+    let age = 25;
+    let pi = 3.14;
+    console.log(age); // 输出：25
+    console.log(pi); // 输出：3.14
+
+    let isTrue = true;
+    let isFalse = false;
+    console.log(isTrue); // 输出：true
+    console.log(isFalse); // 输出：false
+
+    let myVar = null;
+    console.log(myVar); // 输出：null
+
+    let myVars;
+    console.log(myVars); // 输出：undefined
+
+    let id = Symbol("unique");
+    console.log(id); // 输出：Symbol(unique)
+
+    //=================================================
+    //隐式转换
+    console.log("zola" + 1)
+    console.log(2 - "1")
+    console.log(+"123")
+    //显示转换
+    console.log(Number("123"))
+
+    console.log(parseInt("12.25px"))
+
+    console.log(parseFloat("12"))
+
+    // alert("请输入两个数字进行相加")
+    // let a = Number(prompt("请输入第一个数字"))
+    // let b = Number(prompt("请输入第二个数字"))
+
+    let price = prompt("请输入商品价格：")
+    let num = +prompt("请输入商品数量：")
+    let adress = prompt("请输入收获地址：")
+    document.write(`    <table>
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收获地址</th>
+        </tr>
+        <tr>
+            <th>小米滑板车</th>
+            <th>${price}</th>
+            <th>${num}</th>
+            <th>${price * num}</th>
+            <th>${adress}</th>
+        </tr>
+    </table>`)
+
+</script>
+</body>
+</html>
