@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript循环控制</title>
+</head>
+<body>
+    <script>
+        //在JavaScript中，while循环是一种常见的迭代结构，用于重复执行一段代码块，直到给定的条件不再满足。while循环会在每次循环开始之前先判断条件是否为真，只有当条件为真时，循环体中的代码才会被执行。
+
+        //以下是使用while循环的示例代码：
+        let count = 0;
+
+        while (count < 5) {
+            console.log("Count: " + count);
+            if (count ===3){
+                break;
+            }
+            count++;
+        }
+        //do while 但它保证循环体至少会执行一次，即使条件一开始就不满足。
+        let counts = 0;
+
+        do {
+            console.log("Count: " + counts);
+            counts++;
+        } while (counts < 5);
+        //案例题 1 2 3
+        //第一题
+        let hundred = 1
+        while (hundred <= 100){
+            document.write(`${hundred} <br>`)
+            hundred++
+        }
+        //第二题
+        let result = 0
+        let num = 1
+        while (num <= 100){
+            result += num
+            num++
+        }
+        document.write(`"相加结束,结果是",${result}<br>`)
+        //第三题
+        let even_sum = 0
+        let even = 1
+        while (even <= 100){
+            if (even % 2 ===0){
+                even_sum += even
+            }
+            even++
+        }
+        document.write("even_sum相加结束,结果是",even_sum)
+    </script>
+</body>
+</html>

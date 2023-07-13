@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript条件控制语句</title>
+</head>
+<body>
+<script>
+  //if语句：
+  let num = 10;
+
+  if (num > 0) {
+    console.log("Number is positive.");
+  } else if (num < 0) {
+    console.log("Number is negative.");
+  } else {
+    console.log("Number is zero.");
+  }
+
+  //switch语句：
+  let dayOfWeek = "Tuesday";
+
+  switch (dayOfWeek) {
+    case "Monday":
+      console.log("Today is Monday.");
+      break;
+    case "Tuesday":
+      console.log("Today is Tuesday.");
+      break;
+    case "Wednesday":
+      console.log("Today is Wednesday.");
+      break;
+    default:
+      console.log("Other day of the week.");
+  }
+  //三元运算符：
+  let age = 18;
+  let isAdult = (age >= 18) ? "Yes" : "No";
+  console.log(isAdult); // 输出：Yes
+  //多重条件：
+  let temperature = 25;
+  let weather = "sunny";
+
+  if (temperature > 30 && weather === "sunny") {
+    console.log("It's a hot and sunny day!");
+  } else if (temperature > 20 || weather === "sunny") {
+    console.log("It's either hot or sunny, or both!");
+  } else {
+    console.log("The weather is not hot or sunny.");
+  }
+  //案例题
+  let score = +prompt("请输入分数")
+  if (score == NaN){
+      alert("您输入的内容有误")
+  }
+  if (score >=700){
+      alert("欢迎加入my school")
+  } else {
+      alert("分数不够 加油")
+  }
+
+  let user = prompt("请输入名字")
+  let password = prompt("请输入密码")
+
+  if (user ==="pink" && password ==="123456"){
+      alert("登录成功")
+  }else {
+      alert("登录失败")
+  }
+
+  let year  = Number(prompt("请输入年份"))
+  if ((year % 4 === 0 && year % 100 !==0) || year % 400 ===0){
+      alert("您输入的年份"+year + "是闰年")
+  } else {
+      alert("您输入的年份" +year + "是平年")
+  }
+
+  let max  = +prompt("请输入数字")
+  let min  = +prompt("请输入数字")
+  isMax = max >min ? max :min
+  alert("最大值是"+ isMax)
+
+  let zero  = +prompt("数字补零")
+  let result = zero > 10 ? zero : ("0" + zero)
+  alert(result)
+
+  let first  = +prompt("请输入1数字")
+  let second  = +prompt("请输入2数字")
+  let operator = prompt("请输入 + - * /")
+
+  switch (operator) {
+        case "+":
+            alert(first + second)
+            break
+        case "-":
+            alert(first - second)
+            break
+        case "*":
+            alert(first * second)
+            break
+        case "/":
+            alert(first / second)
+            break
+        default:
+            alert("你输入的不正确")
+  }
+</script>
+</body>
+</html>

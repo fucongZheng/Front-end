@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript运算</title>
+</head>
+<body>
+    <script>
+        let num =1
+        console.log(num++ + ++num + num )
+        num += 1
+        num -= 1
+        num *= 2
+        num /= 2
+
+        //一元运算
+        num ++
+        //比较运算  *****开发中判断是否相等，强烈推荐使用 ===
+        let num1 =5
+
+        console.log(num >num1)
+        console.log(num <num1)
+        console.log(num =num1)
+        console.log(num >=num1)
+        console.log(num <=num1)
+        console.log(num ==num1)
+        console.log(num ===num1)
+        console.log(num !==num1)
+
+        //逻辑运算符 && || !
+
+        let a = true;
+        let b = false;
+        let c = true;
+
+        console.log((a && b) || c); // 输出：true
+        console.log(!(a || c)); // 输出：false
+        console.log(a && b); // 输出：false
+
+        console.log(a || b); // 输出：true
+
+        console.log(!a); // 输出：false
+        console.log(!b); // 输出：true
+
+        let number = Number(prompt("请输入数字："))
+        let flag = (number % 4 ==0 && number % 100 !=0)
+        alert(flag)
+    </script>
+</body>
+</html>
