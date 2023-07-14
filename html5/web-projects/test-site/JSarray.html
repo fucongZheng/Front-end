@@ -3,11 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript数组学习</title>
+    <style>
+        .quarter{
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            margin: 50px auto;
+            text-align: center;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+        .quarter>div{
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            justify-content: space-between;
+            background-color: #ff9500;
+        }
+        .quarter>div>span{
+            margin-top: -20px;
+        }
+        .quarter>div>h4{
+            width: 80px;
+            margin-bottom: -30px;
+            margin-left: -10px;
+        }
+    </style>
 </head>
 <body>
+<!--<div class="quarter">-->
+<!--    <div style="height: 123px;" >-->
+<!--        <span>123</span>-->
+<!--        <h4>第一季度</h4>-->
+<!--    </div>-->
+<!--    <div style="height: 123px;">-->
+<!--        <span>123</span>-->
+<!--        <h4>第一季度</h4>-->
+<!--    </div>-->
+<!--    <div style="height: 123px;">-->
+<!--        <span>123</span>-->
+<!--        <h4>第一季度</h4>-->
+<!--    </div>-->
+<!--    <div style="height: 123px;">-->
+<!--        <span>123</span>-->
+<!--        <h4>第一季度</h4>-->
+<!--    </div>-->
+<!--</div>-->
 <script>
     let arr = ["zola","apple"]
     console.log(arr[1])
+
+    //案例
+    let numbers = [2,62,7,5,1,4]
+    let sum =0
+    let max_number = 0
+    for (let i =0;i<numbers.length;i++){
+        sum += numbers[i]
+    }
+    let avg = sum / numbers.length
+    console.log(sum)
+    console.log(avg)
+
+    for (let i =0;i<numbers.length;i++){
+        if (numbers[i] > max_number){
+            max_number = numbers[i]
+        }
+    }
+    //数组增删改查
+    let colors = ["red", "green"];
+    colors.push("blue");
+    colors.unshift("yellow")
+    colors[3] = "blue";
+
+    let removedColor = colors.pop();
+    colors.splice(1, 1); // 移除索引为1的元素
+    //增删改 案例
+    let old = [1,11,12,14,15,17,16]
+    let news = []
+    for (let i =0 ;i<old.length;i++){
+        if (old[i] > 10){
+            news.push(old[i])
+        }
+    }
+    console.log(news)
+
+
+    //案例渲染图表
+    document.write(`<div class="quarter">`)
+    for (let i =1;i<=4;i++){
+        let n = +prompt("请输入指标")
+        let season = prompt(`请输入${i}季度`)
+        document.write(`<div style="height: ${n}px;" >
+        <span>${n}</span>
+        <h4>第${season}季度</h4>
+    </div>`)
+    }
+    document.write(`</div>`)
+
+    //冒泡排序
+    function bubbleSort(arr) {
+        let len = arr.length;
+        for (let i = 0; i < len - 1; i++) {
+            for (let j = 0; j < len - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // 交换元素位置
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    // 示例使用：
+    var array = [64, 34, 25, 12, 22, 11, 90];
+    console.log("排序前：" + array);
+    var sortedArray = bubbleSort(array);
+    console.log("排序后：" + sortedArray);
+
 </script>
 </body>
 </html>

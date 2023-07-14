@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript循环for</title>
+    <style>
+        span{
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px;
+            border:  1px solid black;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px #00539f;
+            text-align: center;
+            width: 100px;
+            background-color: #ff9500;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<script>
+    for (let i = 0; i < 5; i++) {
+        console.log("Iteration: " + i);
+    }
+
+    let fruits = ["apple", "banana", "orange"];
+
+    for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+    }
+
+    for (let i = 0; i < 10; i++) {
+        if (i === 5) {
+            break; // 跳出循环
+        }
+        if (i === 3) {
+            continue; // 终止当前迭代，进入下一次循环
+        }
+        console.log(i);
+    }
+    //案例
+    //乘法表
+    for (let i = 1; i<=9;i++){
+        for (let j = 1;j<=i;j++){
+            document.write(`<span>${j} X ${i} =${i * j}</span>`)
+        }
+        document.write(`<br>`)
+    }
+
+</script>
+</body>
+</html>

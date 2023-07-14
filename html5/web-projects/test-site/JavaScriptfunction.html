@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript函数学习</title>
+</head>
+<body>
+    <script>
+        function f(a ,b) {
+            return a +b
+        }
+
+        function sum(num){
+            let result = 0
+            for (let i = 1;i<=num ;i++){
+                result +=i
+            }
+            return result
+        }
+
+        let c = f(10,20)
+        let d = sum(100)
+        console.log(c)
+        console.log(d)
+
+        //函数表达式
+        let fn = function (){
+            console.log("函数表达式")
+        }
+        fn();
+            //匿名函数
+        (function () {
+            console.log("匿名函数")
+            })();
+        (function (x,y){
+            console.log(x +y)}(1,2));
+        //短路逻辑
+        function test(x,y){
+            x = x || 0
+            y = y || 0
+
+            console.log(x+y)
+        }
+    </script>
+</body>
+</html>

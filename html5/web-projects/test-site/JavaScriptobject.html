@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript对象学习</title>
+    <style>
+        .student {
+            margin: 50px auto;
+            width: 700px;
+            height: 300px;
+            text-align: center;
+        }
+
+        .student > table {
+            border: 1px solid black;
+        }
+
+        table, tr, th {
+            border: 1px solid snow;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        th {
+            padding: 10px 30px;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        table tr:nth-child(1) {
+            background-color: beige;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #ff9500;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="student">-->
+
+<!--    <table>-->
+<!--        <caption>学生信息表</caption>-->
+<!--        <tr>-->
+<!--            <th>序号</th>-->
+<!--            <th>姓名</th>-->
+<!--            <th>年龄</th>-->
+<!--            <th>性别</th>-->
+<!--            <th>家乡</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>1</th>-->
+<!--            <th>zola</th>-->
+<!--            <th>11</th>-->
+<!--            <th>man</th>-->
+<!--            <th>hubei</th>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
+<script>
+    let person = {
+        username: "zola",
+        age: 19,
+        gender: "woman",
+        speakLanguage: function () {
+            console.log("I can speak a little chinese")
+        }
+    }
+    // 删除属性
+    delete person.age;
+    // 修改属性
+    person.age = 40;
+    // 使用点号（.）访问属性
+    console.log(person.name); // 输出: John
+
+    // 或者使用方括号（[]）访问属性
+    console.log(person["age"]); // 输出: 30
+    console.log(person)
+
+    //对象遍历 for in
+    for (let key in person) {
+        console.log(key + ": " + person[key]);
+    }
+
+    Object.keys(person).forEach(function (key) {
+        console.log(key + ": " + person[key]);
+    });
+
+    // 或者使用 for...of 循环
+
+    for (let key of Object.keys(person)) {
+        console.log(key + ": " + person[key]);
+    }
+
+    // 或者使用 for...of 循环
+
+    for (let [key, value] of Object.entries(person)) {
+        console.log(key + ": " + value);
+    }
+
+    let student = [
+        {name: "zola", age: 13, gender: "man", adress: "China"},
+        {name: "apple", age: 17, gender: "woman", adress: "America"},
+        {name: "orange", age: 23, gender: "woman", adress: "China"},
+        {name: "banana", age: 19, gender: "man", adress: "America"},
+        {name: "mango", age: 22, gender: "man", adress: "China"},
+        {name: "pear", age: 17, gender: "man", adress: "China"},
+        {name: "tomato", age: 18, gender: "man", adress: "China"}
+    ]
+    document.write(`<div class="student">
+
+    <table>
+        <caption>学生信息表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>`)
+    for (let i = 0; i < student.length; i++) {
+        document.write(` <tr>
+            <th>${i+1}</th>
+            <th>${student[i].name}</th>
+            <th>${student[i].age}</th>
+            <th>${student[i].gender}</th>
+            <th>${student[i].adress}</th>
+        </tr>`)
+    }
+    document.write(`</table>
+                       </div>`)
+</script>
+</body>
+</html>
