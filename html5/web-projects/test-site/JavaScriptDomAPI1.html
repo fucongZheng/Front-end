@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScriptDOM Tree Manipulation</title>
+</head>
+<body>
+<div id="myDiv">
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph.</p>
+</div>
+
+<script>
+    //获取元素方法介绍
+    const element = document.getElementById('myElement');
+    const elements1 = document.getElementsByClassName('myClass');
+    const elements2= document.getElementsByTagName('div');
+    const element2 = document.querySelector('.myClass');
+    const elements = document.querySelectorAll('p');
+
+    // 获取元素
+    const myDiv = document.getElementById('myDiv');
+    const heading = myDiv.querySelector('h1');
+    const paragraph = myDiv.querySelector('p');
+
+    // 修改元素内容
+    heading.textContent = 'Hello, OpenAI!'; // 或者使用 innerHTML
+
+    // 创建新元素
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is a new paragraph.';
+
+    // 添加元素到父元素
+    myDiv.appendChild(newParagraph);
+
+    // 删除元素
+    myDiv.removeChild(paragraph);
+</script>
+</body>
+</html>
