@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript控制文本</title>
+</head>
+<body>
+    <div class="box">这个是内容啊</div>
+<script>
+    const element =  document.querySelector(`.box`)
+
+    //解析标签
+    element.innerHTML = "<strong>this is my textContent</strong>"
+    //不解析标签
+    element.innerText = "this is my textContent2"
+    //不解析标签
+    element.textContent = "<strong>hello everyone</strong>"
+</script>
+</body>
+</html>

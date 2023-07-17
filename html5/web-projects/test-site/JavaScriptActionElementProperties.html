@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript操作元素属性</title>
+</head>
+<body>
+<div id="myDiv" class="highlighted" data-info="example">6666</div>
+
+<script>
+    const element = document.getElementById('myDiv');
+
+    // 获取属性值
+    const className = element.getAttribute('class');
+    console.log(className); // 输出: "highlighted"
+
+    // 设置属性值
+    element.setAttribute('data-info', 'updated example');
+
+    // 移除属性
+    element.removeAttribute('class');
+    element.removeAttribute('data-info');
+
+
+    // 添加类
+    element.classList.add('active');
+
+    // 删除类
+    element.classList.remove('highlighted');
+
+    // 切换类
+    element.classList.toggle('visible');
+
+    // 检查类是否存在
+    const hasClass = element.classList.contains('active');
+    console.log(hasClass); // 输出: true
+
+
+    // 设置样式属性
+    element.style.setProperty('background-color', 'yellow');
+
+    // 获取样式属性值
+    const color = element.style.getPropertyValue('color');
+    console.log(color); // 输出: "blue"
+
+    // 移除样式属性
+    element.style.removeProperty('color');
+</script>
+
+</body>
+</html>
