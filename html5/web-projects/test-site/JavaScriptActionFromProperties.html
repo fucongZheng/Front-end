@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript操作文本框内容</title>
+</head>
+<body>
+<input type="text" id="myInput" value="x">
+<button onclick="getInputValue()">获取输入框的值</button>
+<button onclick="toggleInput()">禁用/启用输入框</button>
+<input type="checkbox" id="myCheckbox">
+<button onclick="toggleCheckbox()">切换复选框的选中状态</button>
+
+<select id="mySelect">
+    <option value="option1">选项1</option>
+    <option value="option2">选项2</option>
+    <option value="option3">选项3</option>
+</select>
+<button onclick="getSelectedOption()">获取选中的选项值</button>
+
+<script>
+    //获取和设置输入框的值：
+    function getInputValue() {
+        const input = document.getElementById('myInput');
+        const value = input.value;
+        console.log(value);
+    }
+    //设置复选框或单选按钮的选中状态：
+    function toggleCheckbox() {
+        const checkbox = document.getElementById('myCheckbox');
+        checkbox.checked = !checkbox.checked;
+    }
+    //获取和设置下拉列表（select）的选中值：
+    function getSelectedOption() {
+        const select = document.getElementById('mySelect');
+        const selectedValue = select.value;
+        const selectedText = select.textContent;
+        console.log(selectedValue);
+        console.log(selectedText);
+    }
+    //禁用和启用表单元素：
+    function toggleInput() {
+        const input = document.getElementById('myInput');
+        input.disabled = !input.disabled;
+    }
+</script>
+
+</body>
+</html>
