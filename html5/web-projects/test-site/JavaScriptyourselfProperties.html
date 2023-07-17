@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript自定义属性</title>
+</head>
+<body>
+<div id="myElement" data-info="example"></div>
+<script>
+    /*
+    通过这些示例代码，您可以了解如何设置、获取、移除和检查自定义属性的值。自定义属性以 data- 开头，并可以在元素上存储与业务相关的自定义信息。
+    使用 setAttribute 和 getAttribute 方法，或者直接通过 dataset 属性访问自定义属性的值。请注意，自定义属性的命名应遵循 HTML 规范，并尽量保持语义化和可读性。
+     */
+    //设置自定义属性值：
+    const element1 = document.getElementById('myElement');
+    element1.setAttribute('data-info', 'updated example');
+//获取自定义属性值：
+    const element2 = document.getElementById('myElement');
+    const attributeValue = element2.getAttribute('data-info');
+    console.log(attributeValue); // 输出: "example"
+//移除自定义属性：
+    const element3 = document.getElementById('myElement');
+    element3.removeAttribute('data-info');
+    //检查自定义属性是否存在：
+    const element = document.getElementById('myElement');
+    const hasAttribute = element.hasAttribute('data-info');
+    console.log(hasAttribute); // 输出: true
+
+    //使用 dataset 属性访问自定义属性：
+    const element5 = document.getElementById('myElement');
+    const value = element5.dataset.info;
+    console.log(value); // 输出: "example"
+</script>
+</body>
+</html>
