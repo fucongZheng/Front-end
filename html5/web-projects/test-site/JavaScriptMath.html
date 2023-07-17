@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptMath学习</title>
+</head>
+<body>
+<script>
+    // 生成一个介于 0 到 1 之间的随机数生成随机数：
+    const randomNum = Math.random();
+    console.log(randomNum);
+
+    // 生成一个介于 1 到 10 之间的随机整数
+    const randomInt = Math.floor(Math.random() * 10) + 1;
+    console.log(randomInt);
+//计算数值的绝对值：
+    const num = -5;
+    const absoluteValue = Math.abs(num);
+    console.log(absoluteValue);
+    //对数进行四舍五入、向上取整或向下取整：
+    const num1 = 4.8;
+
+    const rounded = Math.round(num);    // 四舍五入
+    const ceil = Math.ceil(num);        // 向上取整
+    const floor = Math.floor(num);      // 向下取整
+
+    console.log(rounded);   // 输出: 5
+    console.log(ceil);      // 输出: 5
+    console.log(floor);     // 输出: 4
+
+    //计算数值的平方根、幂和对数：
+    const number = 16;
+
+    const squareRoot = Math.sqrt(number);            // 平方根
+    const power = Math.pow(number, 2);               // 幂
+    const logarithm = Math.log10(number);            // 以 10 为底的对数
+
+    console.log(squareRoot);     // 输出: 4
+    console.log(power);          // 输出: 256
+    console.log(logarithm);      // 输出: 1.2041199826559248
+
+</script>
+</body>
+</html>
