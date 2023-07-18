@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript间歇性函数</title>
+</head>
+<body>
+<script>
+  function myFunction() {
+    console.log('Hello');
+  }
+  function showMessage() {
+      console.log('Hello1');
+  }
+
+  // 2秒后执行showMessage函数
+  setTimeout(showMessage, 2000);//只执行一次
+
+  let interval = setInterval(myFunction, 1000) // 每秒钟打印一次 'Hello'
+  // 5秒后停止间歇函数的执行
+  setTimeout(function() {
+      clearInterval(interval);
+      console.log('Stopped');
+  }, 5000);
+
+
+  function createTimer() {
+      var count = 0;
+
+      // 返回一个函数作为计时器
+      return function() {
+          count++;
+          console.log('Count:', count);
+      };
+  }
+
+  // 创建计时器实例
+  let timer = createTimer();
+
+  // 每隔500毫秒执行计时器函数
+  let stops = setInterval(timer, 1000);
+  setTimeout(function () {
+      clearInterval(stops);
+      document.write("time is over");
+  },5000)
+</script>
+</body>
+</html>

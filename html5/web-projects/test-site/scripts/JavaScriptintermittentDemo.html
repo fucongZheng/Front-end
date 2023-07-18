@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript间歇函数案例</title>
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10">用户注册协议</textarea>
+<br>
+<input type="checkbox" id="myCheckbox">
+<button class="btn" onclick="toggleCheckbox()">我已经阅读用户协议</button>
+<span></span>
+<script>
+    const element = document.querySelector('.btn')
+    element.disabled = true
+    const sp = document.querySelector('span')
+    const checkbox = document.getElementById('myCheckbox');
+    checkbox.disabled = true
+    function toggleCheckbox() {
+
+        checkbox.checked = !checkbox.checked;
+    }
+    function createTimer() {
+        var count = 0;
+
+        // 返回一个函数作为计时器
+        return function() {
+            count++;
+            console.log('Count:', count);
+            sp.innerHTML = `<strong>${count}</strong>`
+        };
+    }
+
+    // 创建计时器实例
+    let timer = createTimer();
+
+    // 每隔500毫秒执行计时器函数
+    let stops = setInterval(timer, 1000);
+    setTimeout(function () {
+        clearInterval(stops);
+        element.disabled = false
+        checkbox.disabled = false
+        sp.remove();
+    },5100)
+
+</script>
+</body>
+</html>
