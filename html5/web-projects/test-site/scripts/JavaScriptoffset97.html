@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offset</title>
+    <style>
+        #myElement {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="myElement">示例元素</div>
+
+<script>
+    const element = document.querySelector('#myElement');
+
+    console.log('距离最近的已定位父元素顶部距离:', element.offsetTop);
+    console.log('距离最近的已定位父元素左侧距离:', element.offsetLeft);
+    console.log('元素宽度:', element.offsetWidth);
+    console.log('元素高度:', element.offsetHeight);
+</script>
+</body>
+</html>

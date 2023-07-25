@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>client</title>
+    <style>
+        #myElement {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="myElement">这是一个示例元素</div>
+
+<script>
+    const element = document.querySelector('#myElement');
+    const clientWidth = element.clientWidth;
+    const clientHeight = element.clientHeight;
+
+    console.log('客户区宽度:', clientWidth);
+    console.log('客户区高度:', clientHeight);
+</script>
+</body>
+</html>

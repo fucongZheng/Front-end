@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间倒计时</title>
+<!--    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.22.1/date-fns.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/date-fns-chinese-calendar@1.4.3/dist/index.js"></script>-->
+    <style>
+        .countdown {
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+            background: #ff9500;
+            text-align: center;
+
+        }
+
+        .countdown .today {
+            padding-top: 50px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        #hour {
+            padding: 5px 5px;
+            text-align: center;
+            background: black;
+            color: snow;
+            border-radius: 2px;
+        }
+
+        #minutes {
+            padding: 5px 5px;
+            text-align: center;
+            background: black;
+            color: snow;
+            border-radius: 2px;
+        }
+
+        #second {
+            padding: 5px 5px;
+            text-align: center;
+            background: black;
+            color: snow;
+            border-radius: 2px;
+        }
+        i{
+            color: snow;
+            text-align: center;
+        }
+        #season{
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+        .days{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .result{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #otherday{
+            padding-top: 50px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="countdown">
+    <p class="today"></p>
+    <p class="clock">
+        <span id="hour">16</span>
+        <i>:</i>
+        <span id="minutes">16</span>
+        <i>:</i>
+        <span id="second">16</span>
+    </p>
+    <p class="distance">
+        <span>距离: </span><span id="season">中秋节</span>
+        <br>
+        <span id="otherday">2023年9月29日</span>
+    </p>
+    <p>还有</p>
+    <p class="days">18天</p>
+    <p class="result">共100小时</p>
+
+</div>
+<script>
+    //获取农历
+    // const { format, fromGregorian, getDayOfYear } = require('date-fns');
+    // const { zonedTimeToUtc, utcToZonedTime } = require('date-fns-tz');
+    // const { ChineseCalendar } = require('date-fns-chinese-calendar');
+
+    // 获取农历节日
+    // function getLunarHoliday(date) {
+    //     const lunarDate = fromGregorian(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    //     const chineseCalendar = new ChineseCalendar();
+    //     const lunarInfo = chineseCalendar.getChineseDateInfo(lunarDate);
+    //     return lunarInfo.festival;
+    // }
+
+
+    function getDates() {
+        const currentDate = new Date();
+        let dates = []
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth(); // 0表示一月，11表示十二月
+        const day = currentDate.getDate();
+
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+        const seconds = currentDate.getSeconds();
+        dates.push(year)
+        dates.push(month )
+        dates.push(day)
+        dates.push(hours )
+        dates.push(minutes)
+        dates.push(seconds)
+        return dates
+    }
+    function replace(getdate) {
+
+        const today = document.querySelector('.today')
+        today.innerHTML = `今天是${getdate[0]}年${getdate[1] +1}月${getdate[2]}日`
+
+        const h = document.querySelector('#hour')
+        const m = document.querySelector('#minutes')
+        const s = document.querySelector('#second')
+        h.innerHTML = `${(getdate[3]>10)?getdate[3]:'0'+getdate[3]}`
+        m.innerHTML = `${(getdate[4]>10)?getdate[4]:'0'+getdate[4]}`
+        s.innerHTML = `${(getdate[5]>10)?getdate[5]:'0'+getdate[5]}`
+    }
+
+
+    setInterval(function() {
+        // 在此处编写要执行的代码
+        let getdate = getDates()
+        replace(getdate)
+    }, 1000);
+    // const lunarHoliday = getLunarHoliday(currentDate);
+    //
+    // console.log('当前日期:', format(currentDate, 'yyyy-MM-dd'));
+    // console.log('农历节日:', lunarHoliday);
+    //let lunarHoliday =  new Date().toLocaleString('zh-CN-u-ca-chinese').replace(/(\d+)\s*?年/,(_,y)=>"甲乙丙丁成己庚辛王癸".charAt((y-4)%10)+"子丑寅卯辰已午未申酉成亥".charAt((y-4)%12))
+    let  lunarHoliday = new Date('2023/7/26').toLocaleString('zh-CN-u-ca-chinese')
+
+    console.log(lunarHoliday)
+
+    // 计算两个日期之间的天数差异
+    function getDaysDifference(date1, date2) {
+        const oneDay = 24 * 60 * 60 * 1000; // 一天的毫秒数
+        const diffInMilliseconds = Math.abs(date1 - date2); // 取两个日期的绝对时间差
+
+        return Math.floor(diffInMilliseconds / oneDay); // 向下取整得到天数
+    }
+
+    // 示例用法
+    const currentDate1 = new Date();
+    const endDate = new Date('2023-09-29');
+
+    const daysDifference = getDaysDifference(currentDate1, endDate);
+
+    console.log('起始日期:', currentDate1.toISOString().substring(0, 10));
+    console.log('结束日期:', endDate.toISOString().substring(0, 10));
+    console.log('天数差异:', daysDifference);
+    const d = document.querySelector('.days')
+    d.innerHTML = `${daysDifference}天`
+    const r = document.querySelector('.result')
+    r.innerHTML = `${daysDifference * 24} 小时 `
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<ul id="myList">
+    <li>项目1</li>
+    <li>项目2</li>
+    <li>项目3</li>
+    <li>项目4</li>
+</ul>
+
+<script>
+    const list = document.querySelector('#myList');
+
+    list.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            console.log('点击了列表项:', event.target.textContent);
+        }
+    });
+</script>
+</body>
+</html>

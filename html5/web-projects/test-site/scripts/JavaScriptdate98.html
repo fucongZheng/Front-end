@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期对象</title>
+    <script>
+        function displayCurrentDate() {
+            const currentDate = new Date();
+            const dateString = currentDate.toDateString();
+
+            const dateElement = document.getElementById('currentDate');
+            dateElement.textContent = dateString;
+        }
+    </script>
+</head>
+<body>
+<h1>当前日期：</h1>
+<p id="currentDate"></p>
+
+<script>
+    displayCurrentDate();
+
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth(); // 0表示一月，11表示十二月
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    const dateString = currentDate.toDateString(); // "Wed Jul 21 2023"
+    const timeString = currentDate.toTimeString(); // "15:30:45 GMT+0800 (China Standard Time)"
+    const dateTimeString = currentDate.toLocaleString(); // "7/21/2023, 3:30:45 PM"
+    console.log(dateTimeString)
+</script>
+</body>
+</html>

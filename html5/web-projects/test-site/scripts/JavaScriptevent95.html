@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面尺寸</title>
+    <style>
+        #content {
+            width: 100%;
+            height: 200px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+
+<script>
+    const content = document.querySelector('#content');
+
+    function adjustLayout() {
+        const windowHeight = window.innerHeight;
+        const contentHeight = windowHeight - 100;
+        content.style.height = `${contentHeight}px`;
+    }
+
+    window.addEventListener('resize', adjustLayout);
+    adjustLayout(); // 初始化布局
+
+    // 其他初始化操作
+    // ...
+
+</script>
+</body>
+</html>
