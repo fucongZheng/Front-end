@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听类型</title>
+</head>
+<body>
+<button id="myButton1">双击我</button>
+<button id="myButton">点击我</button>
+<div id="myElement">将鼠标悬停在这里</div>
+<br>
+<input type="text" id="myInput">
+<br>
+
+<form id="myForm">
+    <input type="text" name="username" required>
+    <button type="submit">提交</button>
+</form>
+<br>
+<input type="text" id="myInput2">
+<br>
+<p>页面加载完成后，此段文字将改变颜色。</p>
+<div id="myDiv" style="height: 200px; overflow: auto;">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!-- 更多文本行 -->
+</div>
+<script>
+<!--    点击事件（click）：-->
+    const button = document.querySelector('#myButton');
+
+    button.addEventListener('click', function(event) {
+        console.log('按钮被点击了！');
+    });
+    //悬停事件（mouseover、mouseout）：
+    const element = document.querySelector('#myElement');
+
+    element.addEventListener('mouseover', function(event) {
+        console.log('鼠标悬停在元素上！');
+    });
+    element.addEventListener('mouseenter', function(event) {
+        console.log('鼠标经过在元素上！');
+    });
+
+    element.addEventListener('mouseout', function(event) {
+        console.log('鼠标离开元素！');
+    });
+//    键盘事件（keydown、keyup、keypress）：
+
+    const input = document.querySelector('#myInput');
+
+    input.addEventListener('keydown', function(event) {
+        console.log('按下键盘按键！');
+    });
+
+    input.addEventListener('keyup', function(event) {
+        console.log('释放键盘按键！');
+    });
+
+    input.addEventListener('keypress', function(event) {
+        console.log('按下或持续按住键盘按键！');
+    });
+
+//    提交表单事件（submit）：
+    const form = document.querySelector('#myForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // 阻止表单默认提交行为
+        console.log('表单已提交！');
+    });
+    //输入事件（input、change）：
+    const input1 = document.querySelector('#myInput2');
+
+    input1.addEventListener('input', function(event) {
+        console.log('输入字段内容发生变化：', input.value);
+    });
+
+    input1.addEventListener('change', function(event) {
+        console.log('输入字段内容已改变：', input.value);
+    });
+    //页面加载事件（load）：
+    window.addEventListener('load', function(event) {
+        const paragraph = document.querySelector('p');
+        paragraph.style.color = 'blue';
+        console.log('页面已加载完成！');
+    });
+    //滚动事件（scroll）：
+    const div = document.querySelector('#myDiv');
+
+    div.addEventListener('scroll', function(event) {
+        console.log('滚动位置：', div.scrollTop);  });
+    //双击事件（dblclick）：
+    const button1 = document.querySelector('#myButton1');
+
+    button1.addEventListener('dblclick', function(event) {
+        console.log('按钮被双击了！');
+    });
+    //焦点事件
+    const input = document.querySelector('#myInput');
+
+    input.addEventListener('focus', function(event) {
+        console.log('输入字段获得焦点！');
+    });
+    const input = document.querySelector('#myInput');
+
+    input.addEventListener('blur', function(event) {
+        console.log('输入字段失去焦点！');
+    });
+    const input = document.querySelector('#myInput');
+
+    input.addEventListener('select', function(event) {
+        console.log('输入字段被选中！');
+    });
+</script>
+
+</body>
+</html>

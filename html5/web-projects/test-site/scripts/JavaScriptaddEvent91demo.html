@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听焦点案例</title>
+    <style>
+        .mi{
+            margin: 10px auto;
+            text-align: center;
+            width: 177px;
+            height: 200px;
+        }
+        .mi .search{
+            border: 1px solid crimson;
+        }
+        .result-list{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 223px;
+            border: 1px solid chocolate;
+            border-top: 0;
+            background: beige;
+        }
+        .result-list a{
+            display: block;
+            padding: 6px 15px;
+            font-size: 12px;
+            color: black;
+            text-decoration: none;
+        }
+        .result-list a:hover{
+            background-color: snow;
+        }
+    </style>
+</head>
+<body>
+<div class="mi">
+    <input type="search" placeholder="小米笔记本">
+    <ul class="result-list">
+        <li><a href="#">全部商品</a></li>
+        <li><a href="#">小米11</a></li>
+        <li><a href="#">小米6</a></li>
+        <li><a href="#">黑鲨</a></li>
+        <li><a href="#">空调</a></li>
+    </ul>
+</div>
+<script>
+    const input = document.querySelector('input')
+    const ul = document.querySelector('.result-list')
+    input.addEventListener('focus', function(event) {
+        ul.style.display = 'block';
+        ul.className = 'search'
+    });
+
+
+    input.addEventListener('blur', function(event) {
+        ul.style.display = 'none';
+        ul.classList.remove('search')
+    });
+</script>
+</body>
+</html>

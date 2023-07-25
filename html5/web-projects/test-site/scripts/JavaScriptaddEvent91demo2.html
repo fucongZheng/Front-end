@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听案例2</title>
+    <style>
+        .text{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<textarea class="text" placeholder="请输入内容"></textarea>
+<button type="submit">提交</button>
+<br>
+<span>0/200</span>
+</body>
+<script>
+    const text = document.querySelector('.text')
+    const sp = document.querySelector('span')
+    text.addEventListener('input',function (){
+        let num = text.value.length
+        if (num > 200){
+            alert('你输入的字符超过了限制')
+        }else {sp.innerHTML = `${num}/200`}
+
+    })
+</script>
+</html>
