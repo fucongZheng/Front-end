@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象event</title>
+</head>
+<body>
+<button id="myButton">点击我</button>
+<input type="text">
+
+<div id="parent">
+    <button id="child">点击我</button>
+</div>
+<script>
+// event.target：获取触发事件的元素（目标元素）。
+// event.currentTarget：获取当前正在处理事件的元素（当前元素）。
+// event.type：获取事件的类型，如点击事件（"click"）、键盘事件（"keydown"）等。
+// event.preventDefault()：阻止事件的默认行为，例如阻止提交表单或跳转链接。
+// event.stopPropagation()：停止事件冒泡，阻止事件继续传播到父元素。
+// event.keyCode或event.key：获取触发键盘事件的按键的代码或键名。
+// event.clientX和event.clientY：获取鼠标事件发生时鼠标相对于浏览器视口的水平和垂直坐标。
+// event.pageX和event.pageY：获取鼠标事件发生时鼠标相对于整个文档页面的水平和垂直坐标。
+// event.touches和event.changedTouches：对于触摸设备，获取涉及事件的所有触摸点的信息。
+// event.timeStamp：获取事件被触发的时间戳，表示自1970年1月1日以来的毫秒数。
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        console.log('被点击的元素：', target);
+    });
+
+    const button = document.querySelector('#myButton');
+
+    button.addEventListener('click', function(event) {
+        console.log('触发事件的元素（目标元素）：', event.target);
+        console.log('当前正在处理事件的元素（当前元素）：', event.currentTarget);
+        console.log('事件类型：', event.type);
+        event.preventDefault(); // 阻止默认行为
+        console.log('阻止了默认行为');
+        console.log('触发时间',event.timeStamp)
+    });
+
+    document.addEventListener('keydown', function(event) {
+        console.log('按键的代码：', event.keyCode);
+        console.log('按键的名称：', event.key);
+    });
+
+    document.addEventListener('mousemove', function(event) {
+        console.log('鼠标在浏览器视口中的水平坐标：', event.clientX);
+        console.log('鼠标在浏览器视口中的垂直坐标：', event.clientY);
+        console.log('鼠标在文档页面中的水平坐标：', event.pageX);
+        console.log('鼠标在文档页面中的垂直坐标：', event.pageY);
+    });
+
+    //展示如何使用event.stopPropagation()方法停止事件冒泡：
+    const parent = document.querySelector('#parent');
+    const child = document.querySelector('#child');
+
+    parent.addEventListener('click', function(event) {
+        console.log('父元素被点击！');
+    });
+
+    child.addEventListener('click', function(event) {
+        event.stopPropagation(); // 停止事件冒泡
+        console.log('子元素被点击！');
+    });
+</script>
+</body>
+</html>

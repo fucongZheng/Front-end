@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调函数</title>
+</head>
+<body>
+<script>
+    function fetchData(callback) {
+        setTimeout(function() {
+            const data = '这是从服务器获取的数据';
+            callback(data);
+        }, 2000);
+    }
+
+    function processData(data) {
+        console.log('正在处理数据：', data);
+    }
+
+    fetchData(processData);
+</script>
+</body>
+</html>
