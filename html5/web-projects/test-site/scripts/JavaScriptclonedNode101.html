@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>克隆节点删除节点</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <p id="original">这是要被克隆和删除的段落。</p>
+</div>
+
+<script>
+    // 获取要克隆和删除的节点
+    var originalNode = document.getElementById("original");
+
+    // 克隆节点
+    var clonedNode = originalNode.cloneNode(true);
+
+    // 在克隆节点上应用样式类名
+    clonedNode.classList.add("highlight");
+
+    // 删除原始节点
+    originalNode.parentNode.removeChild(originalNode);
+
+    // 将克隆后的节点插入到文档中
+    var container = document.getElementById("container");
+    container.appendChild(clonedNode);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nextElementSibling</title>
+    <style>
+        .element {
+            background-color: lightblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="element">第一个元素</div>
+<div>普通文本</div>
+<div class="element">第二个元素</div>
+<div>又一个普通文本</div>
+
+<script>
+    var firstElement = document.querySelector('.element');
+    var nextElement = firstElement.nextElementSibling;
+
+    console.log(nextElement.textContent);
+</script>
+</body>
+</html>

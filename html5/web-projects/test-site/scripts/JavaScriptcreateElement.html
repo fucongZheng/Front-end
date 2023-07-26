@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createElement</title>
+    <style>
+        .myDiv {
+            background-color: lightblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <!-- 新元素将被插入到这里 -->
+</div>
+
+<script>
+    // 创建一个新的 <p> 元素
+    var newParagraph = document.createElement("p");
+
+    // 设置新元素的属性和内容
+    newParagraph.textContent = "这是一个新的段落";
+    newParagraph.className = "myDiv";
+
+    // 将新元素插入到文档中的指定位置
+    var container = document.getElementById("container");
+    container.appendChild(newParagraph);
+
+
+    // 创建一个新的 <div> 元素
+    var newDiv = document.createElement("div");
+    newDiv.textContent = "这是一个新的 div 元素";
+
+    // 获取要插入位置的父元素
+    var parentElement = document.getElementById("parent");
+
+    // 获取要插入位置的参考节点
+    var referenceNode = document.getElementById("reference");
+
+    // 在参考节点前插入新元素
+    parentElement.insertBefore(newDiv, referenceNode);
+</script>
+</body>
+</html>

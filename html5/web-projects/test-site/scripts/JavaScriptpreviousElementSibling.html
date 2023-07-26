@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>previousElementSibling</title>
+    <style>
+        .element {
+            background-color: lightblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>普通文本</div>
+<div class="element">第一个元素</div>
+<div>又一个普通文本</div>
+<div class="element">第二个元素</div>
+
+<script>
+    //secondElement 的前一个兄弟元素
+    var secondElement = document.querySelector('.element');
+    var previousElement = secondElement.previousElementSibling;
+
+    console.log(previousElement.textContent);
+</script>
+</body>
+</html>
