@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regular expression正则表达式</title>
+</head>
+<body>
+<script>
+    //匹配
+    const pattern = /hello/;
+    const str = 'Hello, world!';
+    const result = pattern.test(str);
+    console.log(result); // 输出：false
+
+    //查找和提取：
+    // const pattern = /\d+/;
+    // const str = 'I have 123 apples.';
+    // const result = str.match(pattern);
+    // console.log(result); // 输出：["123"]
+    //
+    // //替换：
+    // const pattern = /apple/g;
+    // const str = 'I have an apple and another apple.';
+    // const result = str.replace(pattern, 'banana');
+    // console.log(result); // 输出："I have an banana and another banana."
+
+</script>
+</body>
+</html>
