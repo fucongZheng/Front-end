@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navigator 对象</title>
+    <script>
+        //检测浏览器信息
+        !(function (){
+            const userAgent = navigator.userAgent
+
+            const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+            const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+            //判断是否是 手机端 是就跳转到对应网址
+            if (android || iphone){
+                location.href = 'http://www.baidu.com'
+            }
+        })()
+    </script>
+</head>
+<body>
+<script>
+    // 获取浏览器的名称
+    const browserName = navigator.userAgent;
+    console.log("浏览器名称:", browserName);
+
+    // 检测是否为移动设备
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    console.log("是否为移动设备:", isMobile);
+
+    // 获取浏览器的语言首选项
+    const language = navigator.language || navigator.userLanguage;
+    console.log("语言首选项:", language);
+
+    // 获取平台信息
+    const platform = navigator.platform;
+    console.log("平台信息:", platform);
+
+    // 检测浏览器是否支持特定功能（例如 Geolocation）
+    const hasGeolocation = "geolocation" in navigator;
+    console.log("浏览器是否支持地理位置功能:", hasGeolocation);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json用法</title>
+</head>
+<body>
+<script>
+    //将 JavaScript 对象转换为 JSON 字符串：
+  const person = {
+    name: "John",
+    age: 30,
+    isAdmin: true
+  };
+//将 JSON 字符串解析为 JavaScript 对象：
+  const jsonString = JSON.stringify(person);
+  console.log(jsonString);
+
+  const jsonStr = '{"name":"John","age":30,"isAdmin":true}';
+  const parsedObj = JSON.parse(jsonStr);
+  console.log(parsedObj);
+//处理包含嵌套对象的 JSON 数据：
+
+  const book = {
+      title: "JavaScript: The Good Parts",
+      author: {
+          name: "Douglas Crockford",
+          age: 65
+      },
+      price: 29.99
+  };
+
+  const bookJson = JSON.stringify(book);
+  console.log(bookJson);
+
+  const parsedBook = JSON.parse(bookJson);
+  console.log(parsedBook.author.name);
+
+    //使用 JSON 的数组表示法:
+  const fruits = ["apple", "banana", "orange"];
+  const fruitsJson = JSON.stringify(fruits);
+  console.log(fruitsJson);
+
+  const parsedFruits = JSON.parse(fruitsJson);
+  console.log(parsedFruits[0]);
+</script>
+</body>
+</html>

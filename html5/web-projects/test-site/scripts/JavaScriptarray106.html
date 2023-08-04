@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptarrjoin map</title>
+</head>
+<body>
+<script>
+    const fruits = ["apple", "banana", "orange"];
+    const joinedString = fruits.join(", ");
+    console.log(joinedString); // 输出: "apple, banana, orange"
+
+    const numbers = [1, 2, 3, 4, 5];
+    const multipliedNumbers = numbers.map((num) => num * 2);
+    console.log(multipliedNumbers); // 输出: [2, 4, 6, 8, 10]
+
+    const numbers1 = [1, 2, 3, 4, 5];
+    const squaredNumbers = numbers1.map((num, index, array) => {
+        console.log(`当前元素: ${num}, 索引: ${index}, 原始数组: ${array}`);
+        return num * num;
+    });
+    console.log(squaredNumbers);
+</script>
+</body>
+</html>

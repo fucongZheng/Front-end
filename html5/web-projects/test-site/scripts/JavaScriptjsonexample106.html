@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地存储案例</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+        table{
+            margin: 0 auto;
+        }
+        .title{
+            margin-left: 1200px;
+        }
+        thead{
+            background: #ff9500;
+        }
+        thead >tr> th{
+            padding: 20px;
+        }
+        tbody{
+            background: pink;
+        }
+        tbody > tr >td {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>聪聪前端统计表</h1>
+<form class="info" autocomplete="off">
+    <input type="text" class="uname" name="uname" placeholder="姓名">
+    <input type="text" class="age" name="age" placeholder="年龄">
+    <input type="text" class="salary" name="salary" placeholder="薪资">
+    <select name="gender" class="gender">
+        <option>男</option>
+        <option>女</option>
+    </select>
+    <select name="city" class="city">
+        <option>北京</option>
+        <option>上海</option>
+        <option>南宁</option>
+    </select>
+    <button class="add">
+        <span>添加</span>
+    </button>
+</form>
+<div class="title">
+    共有数据
+    <span>
+        0
+    </span>
+    条
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>薪资</th>
+            <th>就业城市</th>
+            <th>录入时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>zola</td>-->
+<!--            <td>23</td>-->
+<!--            <td>男</td>-->
+<!--            <td>9888</td>-->
+<!--            <td>北京</td>-->
+<!--            <td>2023-08-03 08:00:15</td>-->
+<!--            <td><a href="JavaScript:">删除</a></td>-->
+<!--        </tr>-->
+    </tbody>
+</table>
+<script>
+    const initData = [{}]
+    // const str = JSON.stringify(initData)
+    // localStorage.setItem('data', str )
+    const arr = JSON.parse(localStorage.getItem('data')) || []
+    const tbody = document.querySelector('tbody')
+    function orderBy(arrs) {
+       for (let i =0 ;i<arrs.length;i++){
+           arrs[i].stuId = arrs[i].stuId>=2?arrs[i].stuId -1 :1
+       }
+       return arrs
+    }
+    function render() {
+    const arrNew =arr.map(function (element,index){
+            return ` <tr>
+                <td>${element.stuId}</td>
+                <td>${element.uname}</td>
+                <td>${element.age}</td>
+                <td>${element.gender}</td>
+                <td>${element.salary}</td>
+                <td>${element.city}</td>
+                <td>${element.time}</td>
+                <td><a href="JavaScript:" data-id="${index}">删除</a></td>
+             </tr>`
+        })
+
+        tbody.innerHTML = arrNew.join('')
+        document.querySelector('.title span').innerHTML = arr.length
+    }
+    render()
+    const info = document.querySelector('.info')
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const salary = document.querySelector('.salary')
+    const city = document.querySelector('.city')
+    const gender = document.querySelector('.gender')
+
+    info.addEventListener('submit',function (e) {
+        e.preventDefault()
+        if (!uname.value || !age.value || !salary.value){
+            return alert('不能为空')
+        }
+        arr.push(
+            {
+                stuId:arr.length +1,
+                uname:uname.value,
+                age:age.value,
+                gender:gender.value,
+                salary:salary.value,
+                city:city.value,
+                time:new Date().toLocaleString()
+            }
+        )
+        render()
+        this.reset()
+        localStorage.setItem('data', JSON.stringify(arr) )
+        history.go(0);
+    })
+    console.log(arr)
+
+    // const nodeList = document.querySelectorAll('a')
+    // console.log(nodeList)
+    // if (nodeList.length !== 0){
+    //         for (let i = 0 ;i<nodeList.length;i++) {
+    //             nodeList[i].addEventListener('click', function (element) {
+    //                 const index = nodeList[i].parentNode.parentNode.firstElementChild
+    //                 // console.log(parentElement)
+    //                 arr.splice(index - 1, 1)
+    //                 render()
+    //                 localStorage.setItem('data', JSON.stringify(orderBy(arr)))
+    //                 history.go(0);
+    //             })
+    //         }
+    //
+    //
+    // }
+    tbody.addEventListener('click',function (e) {
+        if (e.target.tagName === 'A'){
+            if (confirm(`Do you want delete ${arr[e.target.dataset.id].uname}?`)){
+                arr.splice(e.target.dataset.id, 1)
+                render()
+                localStorage.setItem('data', JSON.stringify(orderBy(arr)))
+                history.go(0);
+            }
+        }
+    })
+</script>
+</body>
+</html>

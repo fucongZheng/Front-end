@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件循环（Event Loop）</title>
+</head>
+<body>
+<script>
+    console.log("Start");
+
+    // 定时器回调（宏任务）
+    setTimeout(() => {
+        console.log("Timeout callback");
+    }, 0);
+
+    // Promise 回调（微任务）
+    Promise.resolve().then(() => {
+        console.log("Promise resolved");
+    });
+
+    console.log("End");
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm() 是 JavaScript 中的一个内置函数</title>
+</head>
+<body>
+<script>
+    const result = confirm("确定删除该文件吗？");
+    if (result) {
+        // 用户点击了确认按钮
+        deleteFile();
+    } else {
+        // 用户点击了取消按钮
+        cancelDelete();
+    }
+
+</script>
+</body>
+</html>

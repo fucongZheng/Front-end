@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+</head>
+<body>
+<script>
+    // 后退一步
+    function goBack() {
+        history.back();
+    }
+
+    // 前进一步
+    function goForward() {
+        history.forward();
+    }
+
+    // 前进或后退指定步数
+    function goSteps(steps) {
+        history.go(steps);
+    }
+
+    // 获取历史记录长度
+    const historyLength = history.length;
+    console.log("历史记录长度:", historyLength);
+
+    // 替换当前历史记录项
+    function replaceCurrentUrl(url) {
+        history.replaceState(null, "", url);
+    }
+
+    // 添加新的历史记录项
+    function addNewUrl(url) {
+        history.pushState(null, "", url);
+    }
+</script>
+</body>
+</html>
