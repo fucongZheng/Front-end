@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式2</title>
+</head>
+<body>
+<script>
+    // ^：匹配以特定字符串开头的文本。
+    const pattern = /^Hello/;
+    console.log(pattern.test("Hello, world!")); // Output: true
+    console.log(pattern.test("Hi, Hello")); // Output: false
+    // $：匹配以特定字符串结尾的文本。
+    const pattern = /world$/;
+    console.log(pattern.test("Hello, world!")); // Output: true
+    console.log(pattern.test("Hello, world")); // Output: false
+    // \b：匹配单词的边界。
+    const pattern = /\btest\b/;
+    console.log(pattern.test("This is a test")); // Output: true
+    console.log(pattern.test("Testing")); // Output: false
+    // \B：匹配非单词边界。
+    const pattern = /\Btest\B/;
+    console.log(pattern.test("This is atest")); // Output: true
+    console.log(pattern.test("Testing")); // Output: false
+
+</script>
+</body>
+</html>

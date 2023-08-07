@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式6</title>
+</head>
+<body>
+<script>
+    //以下是使用正则表达式的 replace 方法的示例：
+    const pattern = /apple/g;
+    const text = "I have an apple, she has an apple too.";
+    const replacement = "orange";
+    const newText = text.replace(pattern, replacement);
+    console.log(newText);
+
+    //你也可以使用替换字符串中的特殊变量来引用捕获组、匹配的位置等。以下是一个使用替换字符串和捕获组的示例：
+    const pattern = /(\w+)\s(\w+)/;
+    const text = "John Doe";
+    const replacement = "$2, $1";
+    const newText = text.replace(pattern, replacement);
+    console.log(newText);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式4</title>
+</head>
+<body>
+<script>
+    //正则表达式中的字符类元字符用于定义匹配某个字符集合中的任意一个字符。以下是几个常用的字符类元字符：
+
+    //[]：定义一个字符类，匹配方括号内的任意一个字符。
+    const pattern = /[aeiou]/;
+    console.log(pattern.test("apple")); // Output: true
+    console.log(pattern.test("banana")); // Output: false
+    //[^]：定义一个否定字符类，匹配除了方括号内指定字符以外的任意一个字符。
+    const pattern = /[^0-9]/;
+    console.log(pattern.test("abc")); // Output: true
+    console.log(pattern.test("123")); // Output: false
+    //-：在字符类内部表示一个范围，匹配范围内的任意一个字符。
+    const pattern = /[a-z]/;
+    console.log(pattern.test("hello")); // Output: true
+    console.log(pattern.test("123")); // Output: false
+    //\d：匹配一个数字字符，等同于 [0-9]。
+    const pattern = /\d/;
+    console.log(pattern.test("abc123")); // Output: true
+    console.log(pattern.test("hello")); // Output: false
+    //\w：匹配一个单词字符（字母、数字或下划线），等同于 [a-zA-Z0-9_]。
+    const pattern = /\w/;
+    console.log(pattern.test("hello_world")); // Output: true
+    console.log(pattern.test("@openai")); // Output: false
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式5</title>
+</head>
+<body>
+<script>
+    //\d：匹配一个数字字符，等同于 [0-9]。
+    const pattern = /\d/;
+    console.log(pattern.test("abc123")); // Output: true
+    console.log(pattern.test("hello")); // Output: false
+    //\D：匹配一个非数字字符，等同于 [^0-9]。
+    const pattern = /\D/;
+    console.log(pattern.test("abc123")); // Output: true
+    console.log(pattern.test("456")); // Output: false
+    //\w：匹配一个单词字符（字母、数字或下划线），等同于 [a-zA-Z0-9_]。
+    const pattern = /\w/;
+    console.log(pattern.test("hello_world")); // Output: true
+    console.log(pattern.test("@openai")); // Output: false
+    //\W：匹配一个非单词字符，等同于 [^a-zA-Z0-9_]。
+    const pattern = /\W/;
+    console.log(pattern.test("hello_world")); // Output: false
+    console.log(pattern.test("@openai")); // Output: true
+    //\s：匹配一个空白字符（空格、制表符、换行等）。
+    const pattern = /\s/;
+    console.log(pattern.test("hello world")); // Output: true
+    console.log(pattern.test("hello\tworld")); // Output: true
+    //\S：匹配一个非空白字符。
+    const pattern = /\S/;
+    console.log(pattern.test("hello world")); // Output: false
+    console.log(pattern.test("hello")); // Output: true
+</script>
+</body>
+</html>

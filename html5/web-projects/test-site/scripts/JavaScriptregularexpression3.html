@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式3</title>
+</head>
+<body>
+<script>
+    //*：匹配前面的字符或子表达式出现 0 次或多次。
+    const pattern = /go*d/;
+    console.log(pattern.test("gd")); // Output: true
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("gold")); // Output: false
+
+    //+：匹配前面的字符或子表达式出现 1 次或多次。
+    const pattern = /go+d/;
+    console.log(pattern.test("gd")); // Output: false
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("gold")); // Output: false
+
+    //?：匹配前面的字符或子表达式出现 0 次或 1 次（可选）。
+    const pattern = /goo?d/;
+    console.log(pattern.test("gd")); // Output: true
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("gold")); // Output: false
+
+    //{n}：匹配前面的字符或子表达式出现恰好 n 次。
+    const pattern = /go{2}d/;
+    console.log(pattern.test("gd")); // Output: false
+    console.log(pattern.test("good")); // Output: false
+    console.log(pattern.test("good")); // Output: true
+
+    //{n,}：匹配前面的字符或子表达式出现至少 n 次。
+    const pattern = /go{2,}d/;
+    console.log(pattern.test("gd")); // Output: false
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("good")); // Output: true
+
+    //{n,m}：匹配前面的字符或子表达式出现至少 n 次但不超过 m 次。
+    const pattern = /go{1,3}d/;
+    console.log(pattern.test("gd")); // Output: false
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("good")); // Output: true
+    console.log(pattern.test("gooood")); // Output: false
+
+</script>
+</body>
+</html>
