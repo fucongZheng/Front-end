@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue第一节</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>Hello {{name}}</h1>
+</div>
+<script type="text/javascript">
+    //790909311@qq.com Zfc4762180  谷歌账号
+    // Vue.config.productionTip = false //设置为 false 以阻止 vue 在启动时生成生产提示。
+    new Vue({
+        el:'#root', //el 指定Vue为哪个容器服务
+        data:{ //data 用于存储数据
+            name:'zola8'
+        }
+    })
+</script>
+</body>
+</html>
