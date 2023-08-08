@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue模板指令</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>模板语法</h1>
+    <h3>hello {{name}}</h3>
+    <hr/>
+    <h2>指令语法</h2>
+    <a v-bind:href="url" v-bind:x="hello">点我开始学习</a>
+</div>
+<script type="text/javascript">
+    //插值语法 解析标签体内容 读取data所有数据
+    //指令语法 解析标签  v-bind
+    new Vue(
+        {
+            el:'#root',
+            data:{
+                name:'zola',
+                url:'http://www.baidu.com',
+                hello:'nice'
+            }
+        }
+    )
+</script>
+</body>
+</html>
