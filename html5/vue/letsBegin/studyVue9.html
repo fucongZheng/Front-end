@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+监听按键按下事件（keydown）：
+<input v-on:keydown="onKeyDown">
+
+监听按键释放事件（keyup）：
+<input v-on:keyup="onKeyUp">
+
+监听特定按键的按下事件：
+<input v-on:keydown.enter="onEnterKey">
+<input v-on:keydown.caps-lock="onEnterKey">
+<input v-on:keydown.tab="onEnterKey"> tab要用keydown
+Ctrl shift Alt meta
+
+监听修改键（如Ctrl、Alt或Shift）与其他按键的组合事件：
+<input v-on:keydown.ctrl.enter="onCtrlEnter">
+
+使用键盘修饰符监听特定按键：
+<input v-on:keydown.enter="onEnter" @keyup.escape="onEscape">
+
+<div id="root">
+    <h1>welcome {{name}}</h1>
+    <input type="text" placeholder="entry something" @keyup.enter="showMes">
+</div>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'zola'
+        },
+        methods:{
+            showMes(e){
+                alert('按下了')
+            }
+        }
+    })
+</script>
+</body>
+</html>
