@@ -18,11 +18,28 @@
     //     }
     // })
     // console.log(vm)
+    let number = 18
     let person = {
         name:'zola',
         gender:'man'
     }
-    Object.defineProperty(person,'age',{value:18,enumerable:true}) //这个方式加属性，是不参与遍历 ,可通过添加enumerable让属性能进行遍历
+    //Object.defineProperty 给类添加属性
+    Object.defineProperty(person,'age',{
+        value:18,
+        writable:true,//控制属性是否可以修改
+        configurable:true,//控制属性是否可以删除
+        enumerable:true,//这个方式加属性，是不参与遍历 ,可通过添加enumerable让属性能进行遍历
+
+        get() { //读取person类的age属性时 会调用get
+            return number
+        },
+
+        set(v) {//有人修改person age属性时 会调用set
+            number =v
+        }
+    })
+
+//
 </script>
 </body>
 </html>
