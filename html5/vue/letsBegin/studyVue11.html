@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性-实例 computed</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        *{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <h1>属性案例 {{name}}</h1>
+    <span>姓：</span>
+    <input type="text" v-model="surname">
+    <br/>
+    <span>名：</span>
+    <input type="text" v-model="fame">
+    <br/>
+    <span>姓名:</span><strong>{{fullName}}</strong>
+    <br/>
+    <strong>{{discountedPrice}}</strong>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'zola',
+            surname:'张',
+            fame:'三',
+            products: [
+                { name: 'Apple', price: 1 },
+                { name: 'Orange', price: 2 },
+                { name: 'Banana', price: 3 }
+            ],
+            discountPercentage: 10
+        },
+        computed:{
+            fullName: {
+                get() {
+                    return this.surname + ' ' + this.fame;
+                },
+                set(value) {
+                    const [firstName, lastName] = value.split(' ');
+                    this.surname = firstName;
+                    this.lastName = lastName;
+                }
+            },
+            discountedPrice() {
+                return this.products.map(product => {
+                    return {
+                        name: product.name,
+                        price: product.price - (product.price * this.discountPercentage) / 100
+                    };
+                });
+            }
+        }
+    })
+</script>
+</body>
+</html>

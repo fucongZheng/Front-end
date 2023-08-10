@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性-前戏</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        *{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <h1>属性案例 {{name}}</h1>
+    <span>姓：</span>
+    <input type="text" v-model="surname">
+    <br/>
+    <span>名：</span>
+    <input type="text" v-model="fame">
+    <br/>
+    <span>姓名:</span><strong>{{fullName()}}</strong>
+</div>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'zola',
+            surname:'张',
+            fame:'三'
+        },
+        methods:{
+            fullName(){
+                return this.surname +'-'+this.fame
+            }
+        }
+    })
+</script>
+</body>
+</html>
