@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监视属性</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        *{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <h1>监视属性 预学习</h1>
+    <h2>天气变化了变成：{{fullName}}</h2>
+    <button class="btn" @click="doCheck()">点我切换天气</button>
+</div>
+<script type="text/javascript">
+    const  vm = new Vue({
+        el:'#root',
+        data:{
+            weather:true
+        },
+        methods:{
+            doCheck(){
+                this.weather = !this.weather
+            }
+        },
+        computed:{
+            fullName:{
+                get(){
+                return this.weather ? '炎热':'寒冷'
+                }
+            }
+        },
+        watch:{
+
+        }
+    })
+</script>
+</body>
+</html>

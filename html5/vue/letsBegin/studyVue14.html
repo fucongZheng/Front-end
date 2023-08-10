@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch对比computed</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        *{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <h1>watch对比computed</h1>
+    <h1>属性案例 </h1>
+    <span>姓：</span>
+    <input type="text" v-model="surname">
+    <br/>
+    <span>名：</span>
+    <input type="text" v-model="fame">
+    <br/>
+    <span>姓名:</span><strong>{{fullname}}</strong>
+</div>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            surname:'张',
+            fame:'三',
+            fullname:'张 三'
+        },
+        methods:{
+
+        },
+        computed:{
+
+        },
+        watch:{
+            surname:{
+                handler(start,end){
+                    setTimeout(()=>{
+                        this.fullname = start + ' ' + this.fame
+                    },1000)
+                }
+            }
+            // surname(start,end){
+            //     setTimeout(()=>{
+            //         this.fullname = start + ' ' + this.fame
+            //     },1000)
+            // }
+        }
+    })
+</script>
+</body>
+</html>
