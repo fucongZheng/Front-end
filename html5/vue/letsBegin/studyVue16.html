@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染if else show</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1 v-show="true">条件显示</h1>
+</div>
+
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+
+        },
+        methods:{
+
+        },
+        computed:{
+            fullName: {
+                get: function() {
+                    return this.firstName + ' ' + this.lastName;
+                },
+                set: function(value) {
+                    var names = value.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[1];
+                }
+            }
+        },
+        watch:{
+            // deep:true,
+            // immediate:true,//初始化调用
+            obj: {
+                handler: function(newVal, oldVal) {
+                    console.log('obj 发生变化：', newVal, oldVal);
+                    // 执行操作...
+                },
+                deep: true
+            }
+        }
+    })
+</script>
+</body>
+</html>

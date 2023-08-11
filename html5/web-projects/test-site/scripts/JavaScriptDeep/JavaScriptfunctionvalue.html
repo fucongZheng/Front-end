@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript高级 动态参数 剩余参数</title>
+</head>
+<body>
+<script type="text/javascript">
+    //动态参数（arguments）： 动态参数是一个类数组对象，它包含了函数调用时传递的所有参数。我们可以使用 arguments 对象来访问这些参数，无需提前声明函数接受的参数个数。
+    function sum() {
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        return total;
+    }
+
+    console.log(sum(1, 2, 3, 4)); // 输出：10
+    console.log(sum(5, 10, 15)); // 输出：30
+
+
+    //剩余参数（rest parameters）： 剩余参数允许我们将不定数量的参数收集到一个数组中。它使用 ... 运算符（三个点）来表示。
+    function concatenate(separator, ...strings) {
+        return strings.join(separator);
+    }
+
+    console.log(concatenate('-', 'Hello', 'World')); // 输出：Hello-World
+    console.log(concatenate(' ', 'JavaScript', 'is', 'awesome')); // 输出：JavaScript is awesome
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript箭头函数学习</title>
+</head>
+<body>
+<script type="text/javascript">
+  //箭头函数是ES6引入的一种新的函数声明语法，它具有简洁的语法和特定的词法作用域绑定。下面是一些使用箭头函数的示例：
+  const add = (a, b) => a + b;
+  console.log(add(2, 3)); // 输出：5
+
+  //单个参数和隐式返回：
+  const square = x => x * x;
+  console.log(square(4)); // 输出：16
+
+  //没有参数或多行处理：
+  const greet = () => {
+      console.log('Hello');
+      console.log('World');
+  };
+  greet(); // 输出：Hello World
+
+  //与数组方法结合使用：
+  const numbers = [1, 2, 3, 4, 5];
+  const doubled = numbers.map(num => num * 2);
+  console.log(doubled); // 输出：[2, 4, 6, 8, 10]
+
+  //在对象字面量中使用：
+  const person = {
+      name: 'John',
+      greet: function() {
+          setTimeout(() => {
+              console.log(`Hello, ${this.name}`);
+          }, 1000);
+      }
+  };
+  person.greet(); // 输出：Hello, John
+
+</script>
+</body>
+</html>

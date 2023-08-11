@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript变量提升</title>
+</head>
+<body>
+<script type="text/javascript">
+    //JavaScript 变量提升是指在代码执行过程中，变量和函数声明会被提升至其所在作用域的顶部。这意味着我们可以在声明之前使用变量或调用函数，而不会引发错误。然而，只有声明本身会提升，而不包括赋值操作
+    var x = 5;
+    console.log(x); // 输出: undefined
+    // var x = 5;
+    console.log(myVariable); // 输出：undefined
+    myFunction(); // 输出："Hello"
+
+    var myVariable = "Hello";
+
+    function myFunction() {
+        console.log("Hello");
+    }
+</script>
+</body>
+</html>
