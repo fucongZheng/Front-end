@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定CSS样式</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        .basic{
+            height: 200px;
+            width: 300px;
+            border: 1px solid;
+        }
+        .normal{
+            background-color: #ff9500;
+        }
+        .greens{
+            background-color: greenyellow;
+        }
+        .fillet{
+            border-radius: 5px 10px 15px 20px; /* 左上角为 5px 圆角，右上角为 10px 圆角，右下角为 15px 圆角，左下角为 20px 圆角 */
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div class="basic" v-bind:class="color" @click.capture="changeColor">text</div><br/>
+    <div class="basic" v-bind:class="arr" @click.capture="changeColor">text2</div><br/><br/>
+    <div class="basic" v-bind:class="proObj" @click.capture="changeColor1">text3</div><br/><br/>
+    <div class="basic" v-bind:class="proObj" v-bind:style="styleObj" @click.capture="changeColor1">text4</div>
+    <br/><br/>
+    <div class="basic" v-bind:class="proObj" v-bind:style="styleArr" @click.capture="changeColor1">text4</div>
+</div>
+<script type="text/javascript">
+    //vue 绑定css 玩法详解 ，就是在VM里面定义 属性 属性的值对应者 css的值，然后用v-bind:class进行绑定 VM的属性
+    const vm = new Vue({
+        el:'#root',//页面元素
+        data:{
+            //属性
+            color:'normal',
+            arr:['fillet','greens'],
+            proObj:{
+                greens:false,
+                fillet:false
+            },
+            styleObj:{
+                fontSize:'40px'
+            },
+            styleArr:[
+                {
+                    fontSize:'40px'
+                },{
+                    backgroundColor:'red'
+                }
+            ]
+
+        },
+        methods:{
+            //方法
+            changeColor(){
+                this.color = this.color === 'greens'?'normal':'greens'
+            },
+            changeColor1(){
+                this.proObj.greens = true
+                this.proObj.fillet = true
+
+            },
+        },
+        computed:{
+            //计算属性
+        },
+        watch:{
+            //监测属性
+        }
+    })
+</script>
+</body>
+</html>
