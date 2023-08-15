@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Todo List</h1>
+<input type="text" id="taskInput">
+<button onclick="addTask()">添加任务</button>
+<ul id="taskList"></ul>
+
+<script type="text/javascript">
+    let tasks = [];
+
+    function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== "") {
+            tasks.push(taskText);
+            displayTasks();
+            taskInput.value = "";
+        }
+    }
+
+    function completeTask(index) {
+        tasks.splice(index, 1);
+        displayTasks();
+    }
+
+    function displayTasks() {
+        const taskList = document.getElementById("taskList");
+
+        console.log(taskList.firstChild)
+        // 清空任务列表
+        while (taskList.firstChild) {
+            taskList.removeChild(taskList.firstChild);
+            console.log(taskList)
+        }
+
+        // 显示每个任务
+        for (let i = 0; i < tasks.length; i++) {
+            const taskItem = document.createElement("li");
+            taskItem.textContent = tasks[i];
+
+            const completeButton = document.createElement("button");
+            completeButton.textContent = " 删除";
+            completeButton.onclick = function() {
+                completeTask(i);
+            };
+
+            taskItem.appendChild(completeButton);
+            taskList.appendChild(taskItem);
+        }
+    }
+
+</script>
+</body>
+</html>

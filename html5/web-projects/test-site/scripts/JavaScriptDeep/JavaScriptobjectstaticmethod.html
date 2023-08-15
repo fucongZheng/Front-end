@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object的静态方法</title>
+</head>
+<body>
+<script type="text/javascript">
+    //Object.keys(obj)：返回一个包含对象自身可枚举属性名称的数组。
+    const obj = { a: 1, b: 2, c: 3 };
+    console.log(Object.keys(obj)); // 输出：['a', 'b', 'c']
+
+    //Object.values(obj)：返回一个包含对象自身可枚举属性值的数组。
+    const obj = { a: 1, b: 2, c: 3 };
+    console.log(Object.values(obj)); // 输出：[1, 2, 3]
+
+    //Object.entries(obj)：返回一个包含对象自身可枚举属性键值对的数组。
+    const obj = { a: 1, b: 2, c: 3 };
+    console.log(Object.entries(obj)); // 输出：[['a', 1], ['b', 2], ['c', 3]]
+
+    // Object.assign(target, ...sources)：将一个或多个源对象的属性复制到目标对象中，并返回目标对象。
+    const target = { a: 1 };
+    const source = { b: 2, c: 3 };
+    Object.assign(target, source);
+    console.log(target); // 输出：{ a: 1, b: 2, c: 3 }
+
+    //Object.freeze(obj)：冻结对象，使其属性不能被修改、删除或添加
+    const obj = { a: 1, b: 2 };
+    Object.freeze(obj);
+    obj.a = 10; // 不起作用，无法修改属性值
+    console.log(obj); // 输出：{ a: 1, b: 2 }
+
+    //Object.is(value1, value2)：比较两个值是否相同（与严格相等操作符 === 类似），返回布尔值。
+    console.log(Object.is(5, 5)); // 输出：true
+    console.log(Object.is({}, {})); // 输出：false，不同对象引用
+    console.log(Object.is(NaN, NaN)); // 输出：true，特殊处理 NaN
+</script>
+</body>
+</html>

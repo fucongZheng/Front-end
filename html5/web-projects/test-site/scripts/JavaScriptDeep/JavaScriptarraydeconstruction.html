@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组解构</title>
+</head>
+<body>
+<script type="text/javascript">
+//     基本解构：
+// javascript
+    const numbers = [1, 2, 3];
+    const [a, b, c] = numbers;
+
+    console.log(a); // 输出：1
+    console.log(b); // 输出：2
+    console.log(c); // 输出：3
+//忽略某些元素：
+const numbers = [1, 2, 3, 4, 5];
+const [a, , c] = numbers;
+
+console.log(a); // 输出：1
+console.log(c); // 输出：3
+
+//默认值：
+const numbers = [1, 2];
+const [a, b = 0, c = 3] = numbers;
+
+console.log(a); // 输出：1
+console.log(b); // 输出：2
+console.log(c); // 输出：3
+
+//剩余元素：
+const numbers = [1, 2, 3, 4, 5];
+const [a, b, ...rest] = numbers;
+
+console.log(a); // 输出：1
+console.log(b); // 输出：2
+console.log(rest); // 输出：[3, 4, 5]
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript静态成员实例成员</title>
+</head>
+<body>
+<script type="text/javascript">
+    //实例成员： 实例成员是指属于每个对象实例的成员，它们在每个对象实例中都有自己的副本。可以通过构造函数或类的原型来定义实例成员。
+    function Person(name) {
+        this.name = name; // 实例属性
+
+        this.greet = function() { // 实例方法
+            console.log(`Hello, my name is ${this.name}.`);
+        };
+    }
+
+    const john = new Person('John');
+    john.greet(); // 输出：Hello, my name is John.
+
+    //静态成员： 静态成员是指属于类本身而不是对象实例的成员。它们在整个类中共享，并可以通过类名直接访问。可以使用静态关键字（在 ES6 中引入的 static 关键字）来定义静态成员。
+    class MathUtils {
+        static PI = 3.14159; // 静态属性
+
+        static add(a, b) { // 静态方法
+            return a + b;
+        }
+    }
+
+    console.log(MathUtils.PI); // 输出：3.14159
+    console.log(MathUtils.add(2, 3)); // 输出：5
+</script>
+</body>
+</html>

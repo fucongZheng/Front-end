@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象解构</title>
+</head>
+<body>
+<script type="text/javascript">
+    //基本解构
+    const person = {
+        name: 'John',
+        age: 30,
+        city: 'New York'
+    };
+
+    const { name, age, city } = person;
+
+    console.log(name); // 输出：'John'
+    console.log(age); // 输出：30
+    console.log(city); // 输出：'New York'
+
+    //重命名属性：
+    const person = {
+        name: 'John',
+        age: 30,
+        city: 'New York'
+    };
+
+    const { name: fullName, age: years, city: residence } = person;
+
+    console.log(fullName); // 输出：'John'
+    console.log(years); // 输出：30
+    console.log(residence); // 输出：'New York'
+
+    //默认值：
+    const person = {
+        name: 'John',
+        age: 30
+    };
+
+    const { name, age, city = 'Unknown' } = person;
+
+    console.log(name); // 输出：'John'
+    console.log(age); // 输出：30
+    console.log(city); // 输出：'Unknown'
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+<script type="text/javascript">
+//     在上述示例中，我们定义了一个名为 Person 的构造函数，它接受两个参数 name 和 age 并将它们赋值给对象的属性。构造函数还定义了一个名为 greet 的方法，用于打印一条问候消息。
+//
+// 通过使用 new 关键字，我们可以调用构造函数并创建新的对象实例。john 和 jane 是通过 Person 构造函数创建的两个不同的对象。每个对象都具有自己的 name、age 属性和 greet 方法。
+//
+// 需要注意的是，构造函数的命名约定以大写字母开头，这有助于区分普通函数和构造函数。
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+        this.greet = function() {
+            console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+        };
+    }
+
+    // 使用构造函数创建对象实例
+    const john = new Person('John', 30);
+    const jane = new Person('Jane', 25);
+
+    john.greet(); // 输出：Hello, my name is John and I'm 30 years old.
+    jane.greet(); // 输出：Hello, my name is Jane and I'm 25 years old.
+</script>
+</body>
+</html>

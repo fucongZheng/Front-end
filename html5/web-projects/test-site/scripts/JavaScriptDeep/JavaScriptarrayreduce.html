@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduce() 是 JavaScript 数组的一个常用方法</title>
+</head>
+<body>
+<script type="text/javascript">
+//     array.reduce(callback(accumulator, currentValue, currentIndex, array), initialValue)
+//     callback 是一个回调函数，用于对数组中的每个元素进行处理。它接收四个参数：
+//
+// accumulator：累积器，保存了上一次回调函数的返回值或初始值。
+// currentValue：当前被处理的元素。
+// currentIndex（可选）：当前元素在数组中的索引。
+// array（可选）：原始数组。
+
+
+    const numbers = [1, 2, 3, 4, 5];
+    const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    console.log(sum); // 输出：15
+
+
+</script>
+</body>
+</html>
