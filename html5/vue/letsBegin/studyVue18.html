@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表过滤</title>
+</head>
+<body>
+<div id="root">
+    <h2>列表过滤</h2>
+    <input type="text" placeholder="请输入" v-model="keyWord">
+    <ul>
+        <li v-for="p,index in fillperson" :key="index">{{p.id}}-{{p.name}}</li>
+    </ul>
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+     const vm = new Vue({
+        el:'#root',
+        data:{
+            keyWord:'',
+            person:[
+                {id:'01',name:'zola',age:18},
+                {id:'02',name:'mango',age:11},
+                {id:'03',name:'banana',age:11},
+            ],
+            fillperson:[]
+        },
+        watch:{
+            keyWord:{
+                immediate: true,
+                handler(value){
+                this.fillperson = this.person.filter((p)=>{
+                    return p.name.indexOf(value) !==-1
+                })
+            }
+          }
+        }
+    })
+</script>
+</body>
+</html>

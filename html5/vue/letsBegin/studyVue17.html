@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染</title>
+</head>
+<body>
+<div id="root">
+    <ul>
+        <li v-for="(p,index) in person" :key="index">{{p.id}}</li>
+
+    </ul>
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    const  vm = new Vue({
+        el:'#root',
+        data:{
+            person:[
+                {id:'01',name:'zola',age:18},
+                {id:'02',name:'mango',age:11},
+                {id:'03',name:'banana',age:11},
+            ]
+        }
+    })
+
+</script>
+</body>
+</html>
