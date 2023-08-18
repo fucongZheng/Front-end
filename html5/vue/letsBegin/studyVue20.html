@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue--set方法</title>
+</head>
+<body>
+    <div id="root">
+            <h2>Vue--set方法</h2>
+            <button @click="add">添加性别</button>
+                <ul>
+                    <li v-for="p,index in person" :key="index" v-if="p.gender">{{p.id}}-{{p.name}}-{{p.age}}--{{p.gender}}</li>
+            </ul>
+        </div>
+    <script type="text/javascript" src="../vue.js"></script>
+    <script type="text/javascript">
+        const vm = new Vue({
+            el:'#root',
+            data:{
+                person:[
+                    {id:'01',name:'zola',age:18},
+                    {id:'02',name:'mango',age:21},
+                    {id:'03',name:'banana',age:17},
+                ],
+            },
+            methods:{
+                add(){
+                    for (let i=0;i<this.person.length;i++){
+                        this.$set(this.person[i],"gender","man")
+                    }
+
+                }
+            }
+        })
+    </script>
+    </script>
+    </body>
+    </html>
