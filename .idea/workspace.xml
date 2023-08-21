@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1cb214-4936-4b23-8b17-79aedd42de9f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue23.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Front-end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Front-end.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue24.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue25.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -90,7 +92,7 @@
       <workItem from="1692198840306" duration="9591000" />
       <workItem from="1692367044371" duration="2436000" />
       <workItem from="1692452327558" duration="4028000" />
-      <workItem from="1692582261211" duration="5522000" />
+      <workItem from="1692582261211" duration="10261000" />
     </task>
     <task id="LOCAL-00001" summary="DOM控制文本框">
       <created>1689585489147</created>
@@ -260,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692456581865</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="vue过滤器filter">
+      <created>1692602064638</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1692602064638</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +297,8 @@
     <MESSAGE value="JavaScript高级知识" />
     <MESSAGE value="vue" />
     <MESSAGE value="vue收集表单v-model。trim.number .lazy" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue收集表单v-model。trim.number .lazy" />
+    <MESSAGE value="vue过滤器filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue过滤器filter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
