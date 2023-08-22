@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-自定义函数</title>
+</head>
+<body>
+<div id="root">
+    <h1>自定义</h1>
+    <h1 v-text="name"></h1>
+    <h1 v-big="name">当前值乘10：{{name}}</h1>
+    <button @click="name++">点我加1</button>
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'1'
+        },
+        //自定义函数
+        directives:{
+            big(el, binding){
+                el.innerText = "当前值" +binding.value * 10
+            }
+        }
+    })
+</script>
+</body>
+</html>

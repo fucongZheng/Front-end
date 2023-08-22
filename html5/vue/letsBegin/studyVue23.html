@@ -17,10 +17,12 @@
 <div id="root2">
     <h1>全局过滤器： {{mes | nextOperate}}</h1>
 </div>
+<template>   <div>     {{ 'Hello World' | reverseText }} <!-- 使用自定义过滤器 -->   </div> </template>
 <script type="text/javascript" src="../vue.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
 <script type="text/javascript">
     //https://www.bootcdn.cn/
+    Vue.filter('reverseText', function(value) {   return value.split('').reverse().join(''); });
     Vue.filter('nextOperate',function (value){
         //注册为全局 过滤器
         return value.slice(0,4)

@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VUE---v-html</title>
+    <title>vue--v-cloak</title>
 </head>
 <body>
 <div id="root">
-    <h1 v-html="name">{{meg}}</h1>
-    <h1 v-html="str">{{meg}}</h1>
+<!--    跳过所在节点编译过程-->
+    <h1>vue--v-once</h1>
+    <h1 v-pre>{{name}}</h1>
 </div>
 <script type="text/javascript" src="../vue.js"></script>
 <script type="text/javascript">
     const vm = new Vue({
-        //v-html 渲染文本，解读HTML标签 危险指令
         el:'#root',
         data:{
-            name:"zola",
-            str:'<h1>999</h1>'
+            name:'zola'
         }
     })
 </script>

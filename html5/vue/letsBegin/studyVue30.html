@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue自定义指令-对象式</title>
+</head>
+<body>
+<div id="root">
+    <h1>vue自定义指令-对象式</h1>
+    <h1 v-text="name"></h1>
+    <h1 v-big="name">当前值乘10：{{name}}</h1>
+    <button @click="name++">点我加1</button>
+    <h1 v-mydirective="reds">自定义类：{{name}}</h1><br/><br/>
+    <span v-mydirective="reds">这是一个自定义指令</span>
+</div>
+
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'1',
+            reds:'red'
+        },
+        //自定义函数
+        directives:{
+            big(el, binding){
+                el.innerText = "当前值" +binding.value * 10
+            },
+            mydirective: {
+                bind(el, binding) {
+                    // 指令绑定时调用
+                    //bindingn拿的是 data里面的 属性
+                    console.log("绑定了")
+                    el.style.backgroundColor = binding.value;
+                     },
+                inserted(el, binding) {
+                    // 被绑定元素插入到父节点时调用
+                     },
+                update(el, binding) {
+                    // 组件更新时调用
+                     },
+                componentUpdated(el, binding) {
+                    // 组件及其子组件更新完成时调用
+                    },
+                unbind(el, binding) {
+                    // 指令解绑时调用
+                     }
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VUE---v-html</title>
+    <title>Vue,v-once</title>
 </head>
 <body>
 <div id="root">
-    <h1 v-html="name">{{meg}}</h1>
-    <h1 v-html="str">{{meg}}</h1>
+    <h1>vue--v-cloak</h1>
+    <h1 v-once>初始值 {{name}}</h1>
+    <h1 >当前值：{{name}}</h1>
+    <button @click="name++">点我加1</button>
 </div>
 <script type="text/javascript" src="../vue.js"></script>
 <script type="text/javascript">
     const vm = new Vue({
-        //v-html 渲染文本，解读HTML标签 危险指令
         el:'#root',
         data:{
-            name:"zola",
-            str:'<h1>999</h1>'
+            name:'1'
         }
     })
 </script>
