@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1cb214-4936-4b23-8b17-79aedd42de9f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue26.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue27.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue28.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue29.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue30.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/assembly01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue31.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue32.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue33.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue23.html" beforeDir="false" afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue23.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue25.html" beforeDir="false" afterPath="$PROJECT_DIR$/html5/vue/letsBegin/studyVue25.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/vue/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/html5/vue/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,8 @@
       <workItem from="1692367044371" duration="2436000" />
       <workItem from="1692452327558" duration="4028000" />
       <workItem from="1692582261211" duration="10318000" />
-      <workItem from="1692665549630" duration="10209000" />
+      <workItem from="1692665549630" duration="11104000" />
+      <workItem from="1692751763941" duration="12746000" />
     </task>
     <task id="LOCAL-00001" summary="DOM控制文本框">
       <created>1689585489147</created>
@@ -281,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692622533330</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="vue 自定义指令-函数-对象">
+      <created>1692698082359</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1692698082359</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +317,8 @@
     <MESSAGE value="vue收集表单v-model。trim.number .lazy" />
     <MESSAGE value="vue过滤器filter" />
     <MESSAGE value="vue V-text html" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue V-text html" />
+    <MESSAGE value="vue 自定义指令-函数-对象" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue 自定义指令-函数-对象" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

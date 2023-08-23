@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue生命周期</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1 :style="{opacity}">自定义</h1>
+</div>
+<div id="components-demo">
+    <button-counter></button-counter>
+</div>
+<script type="text/javascript">
+    // 定义一个名为 button-counter 的新组件
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+    new Vue({ el: '#components-demo'})
+    new Vue({
+        el:'#root',
+
+        data:{
+            flag:true,
+            opacity: 1
+        },
+        methods:{
+
+        },
+        mounted(){
+            setInterval(()=>{
+                if (this.flag){
+                    this.opacity -= 0.01
+                    if (this.opacity < 0){
+                        this.flag = false
+                    }
+                }else {
+                    this.opacity += 0.008
+                    if (this.opacity > 1){
+                        this.flag = true
+                        this.opacity = 1
+                    }
+                }
+            },16)
+        }
+    })
+    // setInterval(()=>{
+    //     if (flag){
+    //         vm.opacity -= 0.01
+    //         if (vm.opacity < 0){
+    //             flag = false
+    //         }
+    //     }else {
+    //         vm.opacity += 0.008
+    //         if (vm.opacity > 1){
+    //             flag = true
+    //             vm.opacity = 1
+    //         }
+    //     }
+    // },16)
+</script>
+</body>
+</html>
