@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-组件化开发-组件嵌套</title>
+</head>
+<body>
+<div id="root">
+<!--    这是个容器-->
+<!--    使用组件-->
+
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    const student = Vue.extend({
+        data:function(){
+            return {
+                name:'zola',
+                age:18
+            }
+        },
+        template:`<div><h1>学生:{{name}}</h1>
+                    <h1>年龄:{{age}}</h1></div>`
+    })
+    const hello = Vue.extend({
+        name:"hello",
+        data:function (){
+            return {
+                msg:"全新组件",
+            }
+        },
+        template:`<div>
+                    <h1>{{msg}}</h1>
+                </div>`
+    })
+    const school = Vue.extend({
+        name:"school",
+        data:function(){
+            return {
+                schoolName:'新江中心小学',
+                adress:"nn"
+            }
+        },
+        //嵌套组件，就在父组件 里面加一个components,注册在 父组件里面，然后在父组件的模板里面使用。
+        components:{
+            student:student
+        },
+        //组件HTML模板
+        template:`<div>
+                    <h1>学校:{{schoolName}}</h1>
+                    <h1>地址:{{adress}}</h1>
+                    <student></student>
+                    </div>`
+    })
+    //总分总的模式进行管理， app管理所有组件， VM管理app
+    const app = Vue.extend({
+        template:`
+            <div>
+            <hello></hello>
+            <school></school>
+            </div>
+        `,
+        components:{
+            school,
+            hello
+        }
+    })
+    //------------
+    new Vue({
+        el:'#root',
+        //注册组件
+        components:{
+            app,
+        },
+        //在示例对象VUE里面的 template 定义的模板，会直接替换掉 el 关联的容器
+        template:`<app></app>`
+    })
+</script>
+</body>
+</html>
