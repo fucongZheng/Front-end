@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1cb214-4936-4b23-8b17-79aedd42de9f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/assembly03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/assembly04.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/assembly05.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/MyAppVue01.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/MyStudent01.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/MyVue01.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/vue/assembly/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -48,6 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/html5/vue" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -95,7 +100,8 @@
       <workItem from="1692582261211" duration="10318000" />
       <workItem from="1692665549630" duration="11104000" />
       <workItem from="1692751763941" duration="13221000" />
-      <workItem from="1692839907503" duration="5149000" />
+      <workItem from="1692839907503" duration="5727000" />
+      <workItem from="1692858698494" duration="5255000" />
     </task>
     <task id="LOCAL-00001" summary="DOM控制文本框">
       <created>1689585489147</created>
@@ -300,14 +306,20 @@
       <option name="project" value="LOCAL" />
       <updated>1692842617891</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="vue 组件内置关系">
+      <created>1692858092745</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1692858092745</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DOM控制自定义属性" />
     <MESSAGE value="DOM间歇函数 、监听事件" />
     <MESSAGE value="事件监听鼠标键盘、光标" />
     <MESSAGE value="回调函数" />
@@ -332,7 +344,8 @@
     <MESSAGE value="vue 自定义指令-函数-对象" />
     <MESSAGE value="vue 组件" />
     <MESSAGE value="vue 组件嵌套" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue 组件嵌套" />
+    <MESSAGE value="vue 组件内置关系" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue 组件内置关系" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
