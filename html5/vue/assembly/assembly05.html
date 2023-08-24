@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件内置关系</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    const app = Vue.extend({
+        template:`<div>
+
+</div>`,
+        components:{
+
+        }
+    })
+    const vm = new Vue({
+        template:`<div>
+        <app></app>
+</div>`,
+        el:'#root',
+        data:{
+            msg:'新课'
+        },
+        methods:{
+
+        },
+        computed:{
+
+        },
+        watch:{
+
+        },
+        filter(){
+
+        },
+        directives:{
+
+        },
+        mounted(){},
+        components:{
+            app
+        }
+    })
+</script>
+</body>
+</html>
